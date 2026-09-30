@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vanessa & Alejandro — Coco's Wedding</title>
+<meta name="description" content="Vanessa & Alejandro · 26.06.2027 · Mas Vidal, Girona">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f2e9;--olive:#3d422c;--ink:#24251f;--gold:#a58b58}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,sans-serif;font-weight:300}
+nav{position:fixed;z-index:20;top:0;left:0;width:100%;padding:24px 4vw;display:flex;justify-content:center;gap:clamp(18px,3vw,50px);font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(#1118,transparent);color:#fff}
+nav a{color:inherit;text-decoration:none}
+.hero{height:100svh;min-height:680px;position:relative;display:grid;grid-template-columns:46% 54%;overflow:hidden;background:#d9c9ad}
+.hero-photo{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(247,242,233,.96) 0%,rgba(247,242,233,.83) 32%,rgba(247,242,233,.04) 64%),url('/photo-3.jpg');background-size:cover;background-position:center 55%}
+.hero-copy{position:relative;z-index:2;align-self:center;padding:8vw 4vw 8vw 9vw;max-width:700px}
+.kicker{font-size:11px;letter-spacing:.48em;margin-bottom:28px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(72px,9vw,142px);line-height:.72;font-weight:400;letter-spacing:-.045em;margin:0;color:var(--olive)}
+h1 span{display:block;text-align:center;font-size:.54em;line-height:1.25;margin:.1em 0}
+.date{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:.18em;margin-top:48px}
+.place{font-size:11px;letter-spacing:.34em;text-transform:uppercase;margin-top:12px}
+.hero-bottom{position:absolute;z-index:3;bottom:30px;left:4vw;right:4vw;display:flex;justify-content:space-between;align-items:end;color:#fff;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.scroll{font-size:24px;line-height:1;animation:bob 2s infinite}@keyframes bob{50%{transform:translateY(6px)}}
+.section{padding:110px 8vw}.intro{display:grid;grid-template-columns:1fr 1.2fr;gap:9vw;align-items:center}
+.eyebrow{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,84px);font-weight:400;line-height:.95;margin:18px 0;color:var(--olive)}
+p{line-height:1.8;font-size:14px}.intro-photo{width:100%;aspect-ratio:4/5;object-fit:cover}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}.gallery img{width:100%;height:65vh;object-fit:cover}.gallery img:nth-child(2){margin-top:90px}.gallery img:nth-child(3){margin-top:-90px}.gallery img:nth-child(4){margin-top:0}
+.details{background:var(--olive);color:var(--cream);text-align:center}.details h2{color:var(--cream)}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}.detail{border-top:1px solid #fff5;padding-top:22px}.detail strong{font-family:'Cormorant Garamond';font-size:30px;font-weight:400;display:block;margin-bottom:8px}.detail span{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{font-family:'Cormorant Garamond';font-size:48px;color:var(--olive)}footer small{letter-spacing:.2em;font-size:9px}
+@media(max-width:800px){
+ nav{justify-content:flex-end;padding:18px 20px}nav a{display:none}nav a:first-child{display:block}
+ .hero{display:block;min-height:760px}.hero-photo{background-image:linear-gradient(180deg,rgba(247,242,233,.75),rgba(247,242,233,.08) 48%,rgba(0,0,0,.18)),url('/photo-3.jpg');background-position:62% center}
+ .hero-copy{padding:120px 25px 30px;text-align:center}.kicker{font-size:9px}.date{font-size:25px}.place{font-size:9px}
+ h1{font-size:76px}.hero-bottom{bottom:22px;justify-content:center}.hero-bottom>span:first-child{display:none}
+ .section{padding:75px 24px}.intro{grid-template-columns:1fr;gap:35px}.intro-photo{aspect-ratio:1/1.15}
+ .gallery{display:block}.gallery img{height:auto;aspect-ratio:4/5;margin:0 0 18px!important}
+ .details-grid{grid-template-columns:1fr;gap:45px}.details{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="#inicio">Inicio</a><a href="#historia">Nuestra historia</a><a href="#fin-de-semana">El fin de semana</a><a href="#boda">La boda</a><a href="#alojamiento">Alojamiento</a><a href="#rsvp">RSVP</a>
+</nav>
+
+<header id="inicio" class="hero">
+<div class="hero-photo"></div>
+<div class="hero-copy">
+<div class="kicker">NOS CASAMOS</div>
+<h1>VANESSA <span>&amp;</span> ALEJANDRO</h1>
+<div class="date">26 · 06 · 2027</div>
+<div class="place">Mas Vidal · Girona</div>
+</div>
+<div class="hero-bottom"><span>COCO'S WEDDING</span><span class="scroll">⌄</span><span>UNA NUEVA AVENTURA JUNTOS</span></div>
+</header>
+
+<section id="historia" class="section">
+<div class="intro">
+<div>
+<div class="eyebrow">Nuestra historia</div>
+<h2>Una historia que nos llevó hasta aquí.</h2>
+<p>Nos conocimos en Barcelona y, desde entonces, hemos ido construyendo una historia llena de viajes, familia, amigos y pequeños momentos que se convirtieron en grandes recuerdos.</p>
+<p>Ahora queremos celebrar el siguiente capítulo rodeados de las personas que más queremos.</p>
+</div>
+<img class="intro-photo" src="/photo-1.jpeg" alt="Vanessa y Alejandro">
+</div>
+</section>
+
+<section id="fin-de-semana" class="section">
+<div class="eyebrow">Nuestros recuerdos</div>
+<h2>Antes de la boda,<br>todo lo que hemos vivido.</h2>
+<div class="gallery">
+<img src="/photo-2.jpeg" alt="Vanessa y Alejandro">
+<img src="/photo-3.jpg" alt="Vanessa y Alejandro">
+<img src="/photo-4.jpg" alt="Vanessa y Alejandro">
+<img src="/photo-1.jpeg" alt="Vanessa y Alejandro">
+</div>
+</section>
+
+<section id="boda" class="section details">
+<div class="eyebrow">26 · 06 · 2027</div>
+<h2>El gran día</h2>
+<div class="details-grid">
+<div class="detail"><strong>Mas Vidal</strong><span>Vilafreser · Girona</span></div>
+<div class="detail"><strong>Ceremonia</strong><span>Celebración · Recepción · Fiesta</span></div>
+<div class="detail"><strong>Todo el fin de semana</strong><span>Juntos desde el viernes</span></div>
+</div>
+</section>
+
+<section id="alojamiento" class="section">
+<div class="intro">
+<div>
+<div class="eyebrow">Información para invitados</div>
+<h2>Todo lo que necesitáis saber.</h2>
+<p>Alojamiento, cómo llegar, horarios, recomendaciones para Girona y todos los detalles del fin de semana estarán aquí.</p>
+<p>Esta sección será ampliada con la información definitiva de la boda.</p>
+</div>
+<img class="intro-photo" src="/photo-4.jpg" alt="Vanessa y Alejandro">
+</div>
+</section>
+
+<section id="rsvp" class="section details">
+<div class="eyebrow">RSVP</div>
+<h2>Nos encantará<br>contar contigo.</h2>
+<p>Muy pronto podrás confirmar tu asistencia, indicar tus preferencias y dejarnos un mensaje.</p>
+</section>
+
+<footer>
+<div class="logo">Coco's Wedding</div>
+<p><small>VANESSA &amp; ALEJANDRO · GIRONA · 2027</small></p>
+</footer>
+</body>
+</html>
