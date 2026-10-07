@@ -484,6 +484,131 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
     line-height: 1.35;
   }
 
+}/* =========================
+   COUNTDOWN
+   ========================= */
+
+.countdown-section {
+  padding: 110px 7vw;
+  background: #f4f0e7;
+  color: #30382d;
+  text-align: center;
+}
+
+.countdown-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown-eyebrow {
+  margin: 0 0 28px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #9a8060;
+}
+
+.countdown-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.countdown-number span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(100px, 15vw, 170px);
+  line-height: .75;
+  font-weight: 400;
+  color: #68735d;
+}
+
+.countdown-number small {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #30382d;
+}
+
+.countdown-time {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  margin-bottom: 45px;
+}
+
+.countdown-time div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-time span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+  color: #30382d;
+}
+
+.countdown-time small {
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #8b8c84;
+}
+
+.countdown-date {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #9a8060;
+}
+
+.countdown-finished {
+  display: none;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 42px;
+  color: #68735d;
+}
+
+@media (max-width: 800px) {
+
+  .countdown-section {
+    padding: 85px 22px;
+  }
+
+  .countdown-eyebrow {
+    margin-bottom: 25px;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .countdown-number span {
+    font-size: 115px;
+  }
+
+  .countdown-time {
+    gap: 28px;
+    margin-bottom: 38px;
+  }
+
+  .countdown-time span {
+    font-size: 32px;
+  }
+
+  .countdown-time small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .countdown-date {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
 }
 
 }
@@ -504,6 +629,40 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 </div>
 <div class="hero-bottom"><span>COCO'S WEDDING</span><span class="scroll">⌄</span><span>UNA NUEVA AVENTURA JUNTOS</span></div>
 </header>
+
+<section class="countdown-section">
+  <div class="countdown-inner">
+    <p class="countdown-eyebrow">NUESTRO GRAN DÍA</p>
+
+    <div class="countdown-number">
+      <span id="countdown-days">000</span>
+      <small>DÍAS</small>
+    </div>
+
+    <div class="countdown-time">
+      <div>
+        <span id="countdown-hours">00</span>
+        <small>HORAS</small>
+      </div>
+
+      <div>
+        <span id="countdown-minutes">00</span>
+        <small>MINUTOS</small>
+      </div>
+
+      <div>
+        <span id="countdown-seconds">00</span>
+        <small>SEGUNDOS</small>
+      </div>
+    </div>
+
+    <p class="countdown-date">26 · 06 · 2027</p>
+
+    <p id="countdown-finished" class="countdown-finished">
+      HOY ES EL DÍA
+    </p>
+  </div>
+</section>
 
 <section id="historia" class="section">
 <div class="intro">
