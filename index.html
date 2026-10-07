@@ -914,5 +914,48 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 <p><small>VANESSA &amp; ALEJANDRO · GIRONA · 2027</small></p>
 </footer>
 
+<script>
+  const weddingDate = new Date("2027-06-26T16:30:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+      document.getElementById("countdown-days").textContent = "000";
+      document.getElementById("countdown-hours").textContent = "00";
+      document.getElementById("countdown-minutes").textContent = "00";
+      document.getElementById("countdown-seconds").textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference / (1000 * 60 * 60)) % 24
+    );
+    const minutes = Math.floor(
+      (difference / (1000 * 60)) % 60
+    );
+    const seconds = Math.floor(
+      (difference / 1000) % 60
+    );
+
+    document.getElementById("countdown-days").textContent =
+      String(days).padStart(3, "0");
+
+    document.getElementById("countdown-hours").textContent =
+      String(hours).padStart(2, "0");
+
+    document.getElementById("countdown-minutes").textContent =
+      String(minutes).padStart(2, "0");
+
+    document.getElementById("countdown-seconds").textContent =
+      String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
 </body>
 </html>
