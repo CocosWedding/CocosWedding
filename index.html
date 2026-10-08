@@ -374,14 +374,14 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 .video-date { margin: 30px 0 0; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 3px; color: #9a8060; }
 
 /* =========================
-   INVITACIÓN DE ENTRADA (ESTILO EXACTO IPHONE)
+   INVITACIÓN DE ENTRADA (MÓVIL PANTALLA COMPLETA)
    ========================= */
 
 #invite-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #f2ede4;
+  background: #f7f4ed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,32 +400,31 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   justify-content: center;
 }
 
+/* El sobre ocupa el 100% de la pantalla para simular la textura completa del papel */
 .envelope {
   position: relative;
-  width: min(88vw, 420px);
-  height: min(130vw, 620px);
-  margin: 0 auto;
-  background: #fdfbf7;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
-  overflow: visible;
-  perspective: 1000px;
+  width: 100%;
+  height: 100svh;
+  margin: 0;
+  background: #f4f0e7;
+  overflow: hidden;
+  perspective: 1200px;
 }
 
 .envelope-body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: #f5f0e6;
-  border: 1px solid rgba(215, 205, 190, 0.4);
+  background: #f1ede3;
 }
 
-/* Pliegues laterales con sombra sutil y ángulo fiel a la referencia del iPhone */
+/* Pliegues en X que van de esquina a esquina cruzando en el centro exacto */
 .envelope-body::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(155deg, #eee7d9 48%, transparent 48.5%);
+  background: linear-gradient(to bottom right, transparent 49.6%, rgba(190, 180, 165, 0.35) 49.8%, rgba(190, 180, 165, 0.35) 50.2%, transparent 50.4%);
 }
 
 .envelope-body::after {
@@ -433,10 +432,10 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(-155deg, #eee7d9 48%, transparent 48.5%);
+  background: linear-gradient(to bottom left, transparent 49.6%, rgba(190, 180, 165, 0.35) 49.8%, rgba(190, 180, 165, 0.35) 50.2%, transparent 50.4%);
 }
 
-/* Solapa superior desplegable */
+/* Solapa superior apuntando al centro */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -444,75 +443,78 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   width: 100%;
   height: 50%;
   z-index: 3;
-  background: #e6dfcf;
+  background: #e9e3d5;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
   transform-origin: top center;
-  transition: transform 1s cubic-bezier(.22,.61,.36,1), z-index 0s linear 0.5s;
+  transition: transform 1.1s cubic-bezier(.22,.61,.36,1), z-index 0s linear 0.5s;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
 }
 
+/* Texto ubicado JUSTO DEBAJO del sello centrado */
 .invite-exclusive {
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   left: 50%;
-  top: 67%;
+  top: 59%; /* Posicionado justo tras la caída del sello */
   transform: translateX(-50%);
-  width: 85%;
+  width: 90%;
   margin: 0;
   text-align: center;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
+  font-size: clamp(19px, 5.2vw, 24px);
   font-style: italic;
-  line-height: 1.3;
-  color: #887f71;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #8c8273;
+  letter-spacing: 0.02em;
 }
 
-/* Sello de lacre realista en 3D con forma orgánicamente irregular */
+/* Sello de lacre blanco brillante con alto relieve en 3D */
 #open-invitation.wax-seal {
   position: absolute;
   z-index: 10;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 98px;
-  height: 98px;
+  width: clamp(100px, 26vw, 115px);
+  height: clamp(100px, 26vw, 115px);
   border: none;
   cursor: pointer;
   
-  /* Gradiente blanco-perla con luz focal superior */
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #f6f2ea 55%, #dfd6c7 100%);
-  color: #928574;
+  /* Gradiente blanco puro brillante con reflejo radial */
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fbf9f5 65%, #ece5d8 100%);
+  color: #9c9080;
   
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 26px;
+  font-size: clamp(28px, 7.5vw, 34px);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
 
-  /* Bordes asimétricos estilo cera vertida real */
-  border-radius: 48% 52% 54% 46% / 53% 47% 53% 47%;
+  /* Borde orgánico tipo cera derretida real */
+  border-radius: 49% 51% 53% 47% / 52% 48% 52% 48%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  /* Simulación de bajorrelieve en las iniciales */
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.95), -1px -1px 1px rgba(0, 0, 0, 0.12);
+  /* Iniciales en fina tipografía cursiva con relieve grabado */
+  text-shadow: 1px 1px 1px #fff, -1px -1px 1px rgba(0, 0, 0, 0.12);
 
-  /* Sombras biseladas para dar efecto de relieve 3D */
+  /* Sombras biseladas pronunciadas para crear el grosor exterior del lacre */
   box-shadow: 
-    0 12px 28px rgba(50, 40, 30, 0.13),
-    inset 0 0 0 3px rgba(255, 255, 255, 0.7),
-    inset 4px 4px 8px rgba(255, 255, 255, 0.9),
-    inset -4px -4px 8px rgba(0, 0, 0, 0.14);
+    0 15px 35px rgba(45, 35, 25, 0.16),
+    inset 0 0 0 4px rgba(255, 255, 255, 0.9),
+    inset 5px 5px 10px rgba(255, 255, 255, 1),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.12);
 
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 #open-invitation.wax-seal:hover {
-  transform: translate(-50%, -50%) scale(1.04);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 /* Tarjeta interior */
