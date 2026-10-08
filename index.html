@@ -773,172 +773,124 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 
 /* SOBRE */
 
-.envelope {
-    position: relative;
-    width: min(86vw, 720px);
-    height: min(55vw, 460px);
-    margin: 0 auto 38px;
-    background: #e9e0d0;
-    box-shadow:
-        0 25px 60px rgba(48,56,45,.15),
-        0 3px 8px rgba(48,56,45,.08);
-    overflow: visible;
+/* Contenedor principal ajustado a pantalla completa en móvil */
+#invite-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f4f0e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* cuerpo inferior del sobre */
+/* Ocultar encabezados superiores si quieres que sea identico al iPhone */
+.invite-names, .invite-date, .invite-location {
+  display: none; 
+}
 
+.invite-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estrutura del sobre proporcional y pantalla completa */
+.envelope {
+  position: relative;
+  width: min(88vw, 420px);
+  height: min(130vw, 620px);
+  margin: 0 auto;
+  background: #f7f3ec;
+  border: 1px solid rgba(210, 203, 190, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  overflow: visible;
+}
+
+/* Pliegues limpios y finos del sobre */
 .envelope-body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, transparent 49.5%, #d8cdbb 50%, transparent 50.5%),
-    linear-gradient(225deg, transparent 49.5%, #d8cdbb 50%, transparent 50.5%),
-    #eee6d7;
+    linear-gradient(to top right, transparent 49.5%, rgba(210, 200, 185, 0.4) 50%, transparent 50.5%),
+    linear-gradient(to top left, transparent 49.5%, rgba(210, 200, 185, 0.4) 50%, transparent 50.5%);
+  background-repeat: no-repeat;
 }
-
-/* solapa */
 
 .envelope-flap {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 58%;
+  height: 50%;
   z-index: 3;
-  background: #e6dccb;
+  background: #f4efe6;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  filter: drop-shadow(0 3px 3px rgba(48,56,45,.08));
+  border-bottom: 1px solid rgba(200, 190, 175, 0.4);
 }
 
-/* sello */
-
-.wax-seal {
-    position: absolute;
-    z-index: 5;
-    left: 50%;
-    top: 58%;
-    transform: translate(-50%, -50%);
-
-    width: 82px;
-    height: 82px;
-
-    border: none;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #ae8a4d;
-    color: #f8f4eb;
-
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 25px;
-    font-weight: 400;
-    letter-spacing: 0;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 18px rgba(48,56,45,.18),
-        inset 0 1px 1px rgba(255,255,255,.25);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-}
-
-.wax-seal:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
-.wax-seal:active {
-    transform: translate(-50%, -50%) scale(.96);
-}
-
-/* botón */
-
-#open-invitation {
+/* Sello de lacre blanco efecto 3D realista con bordes irregulares */
+#open-invitation.wax-seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95px;
+  height: 95px;
   border: none;
-  background: #ae8a4d;
-  color: #f8f4eb;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0;
   cursor: pointer;
-  padding: 0;
-  width: 82px;
-  height: 82px;
-  border-radius: 50%;
+  
+  /* Color de lacre perla / blanco roto con reflejos en relieve */
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f1ece4 60%, #e0d8cb 100%);
+  color: #a89d8d;
+  
+  /* Tipografía fina en cursiva */
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+
+  /* Borde irregular para simular la cera derretida real */
+  border-radius: 48% 52% 55% 45% / 52% 46% 54% 48%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:
-    0 8px 18px rgba(48,56,45,.18),
-    inset 0 1px 1px rgba(255,255,255,.25);
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+
+  /* Efecto de volumen 3D real */
+  box-shadow: 
+    0 10px 22px rgba(0, 0, 0, 0.08),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.9),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#open-invitation:hover {
-  transform: scale(1.05);
+#open-invitation.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.04);
 }
 
-#open-invitation:active {
-  transform: scale(.96);
-}
-
+/* Texto inferior dentro del sobre */
 .invite-exclusive {
   position: absolute;
-  z-index: 6;
+  z-index: 4;
   left: 50%;
-  top: 69%;
+  top: 66%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 85%;
   margin: 0;
   text-align: center;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18px;
+  font-size: 19px;
   font-style: italic;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  color: #68735d;
+  line-height: 1.3;
+  color: #8c8375;
 }
 
-@media (max-width: 600px) {
-
-  #invite-overlay {
-    padding-top: 11vh;
-  }
-
-  .invite-names {
-    font-size: 34px;
-    letter-spacing: 2px;
-  }
-
-  .invite-date {
-    font-size: 9px;
-  }
-
-  .invite-location {
-    margin-bottom: 34px;
-  }
-
-  .envelope {
-    width: 86vw;
-    height: 96vw;
-    margin: 0 auto;
-  }
-
-  #open-invitation {
-    width: 68px;
-    height: 68px;
-    font-size: 20px;
-  }
-
-}
 
 /* =========================
    APERTURA DEL SOBRE
@@ -1061,43 +1013,21 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 </style>
 </head>
 <body>
-   
-   <div id="invite-overlay">
 
+<div id="invite-overlay">
   <div class="invite-content">
-
-    <p class="invite-names">
-      VANESSA &amp; ALEJANDRO
-    </p>
-
-    <p class="invite-date">
-      26 · 06 · 2027
-    </p>
-
-    <p class="invite-location">
-      MAS VIDAL · GIRONA
-    </p>
-
-<div class="envelope">
-
-  <div class="envelope-flap"></div>
-
-  <div class="envelope-body">
-
-    <button id="open-invitation" class="wax-seal">
-      V&amp;A
-    </button>
-
-    <p class="invite-exclusive">
-      Esta invitación es exclusiva para ti
-    </p>
-
+    <div class="envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-body">
+        <button id="open-invitation" class="wax-seal">
+          V&amp;A
+        </button>
+        <p class="invite-exclusive">
+          Esta invitación es exclusiva para ti
+        </p>
+      </div>
+    </div>
   </div>
-
-</div>
-
-</div>
-
 </div>
    
 <nav>
