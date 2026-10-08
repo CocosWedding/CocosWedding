@@ -66,4 +66,854 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 }
 
 .eyebrow {
-  margin: 0 0
+  margin: 0 0 12px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.section-intro h2 {
+  margin: 0 0 25px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(52px, 7vw, 90px);
+  line-height: .9;
+  font-weight: 400;
+}
+
+.section-description {
+  max-width: 570px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #64685e;
+}
+
+.hotel-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.hotel-card {
+  background: #faf8f2;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(48, 56, 45, .08);
+}
+
+.hotel-image {
+  height: 340px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.hotel-image-doubletree {
+  background-image: linear-gradient(rgba(30,40,32,.15),rgba(30,40,32,.15)), url("public/9B0F43FB-6A7C-4DCD-920B-31859924643D.jpeg");
+}
+
+.hotel-image-cmc {
+  background-image: linear-gradient(rgba(30,40,32,.15),rgba(30,40,32,.15)), url("public/B5B2B64B-88DF-4BE5-A540-5CF437E65681.jpeg");
+}
+
+.hotel-label {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 8px 14px;
+  background: rgba(250, 248, 242, .92);
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.hotel-content {
+  padding: 42px 42px 45px;
+}
+
+.hotel-location {
+  margin: 0 0 10px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #9a8060;
+}
+
+.hotel-content h3 {
+  margin: 0 0 28px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.hotel-highlight {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ddd7c9;
+}
+
+.hotel-highlight span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 58px;
+  line-height: .8;
+  color: #68735d;
+}
+
+.hotel-highlight small {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.hotel-description {
+  margin: 0 0 18px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #64685e;
+}
+
+.hotel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 30px;
+}
+
+.detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.detail-icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #9a8060;
+  font-size: 11px;
+}
+
+.detail p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #555a51;
+}
+
+.detail strong {
+  font-weight: 600;
+  color: #30382d;
+}
+
+.detail.important {
+  margin-top: 8px;
+  padding: 15px;
+  background: #eeeadf;
+}
+
+.detail.important .detail-icon {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.hotel-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 28px;
+}
+
+.contact-link {
+  color: #30382d;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-decoration: none;
+  transition: opacity .3s ease;
+}
+
+.contact-link:hover {
+  opacity: .6;
+}
+
+.hotel-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #30382d;
+  color: #f8f5ed;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.hotel-button span {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.hotel-button:hover {
+  background: #68735d;
+}
+
+.accommodation-note {
+  max-width: 700px;
+  margin: 70px auto 0;
+  padding-top: 35px;
+  border-top: 1px solid #d8d1c2;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.note-symbol {
+  color: #9a8060;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.accommodation-note p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #686c64;
+}
+
+@media (max-width: 800px) {
+  .accommodation-section { padding: 90px 22px; }
+  .section-intro { margin-bottom: 55px; }
+  .section-intro h2 { font-size: 58px; }
+  .hotel-grid { grid-template-columns: 1fr; gap: 30px; }
+  .hotel-image { height: 260px; }
+  .hotel-content { padding: 32px 25px 35px; }
+  .hotel-content h3 { font-size: 34px; }
+  .hotel-highlight span { font-size: 50px; }
+  .accommodation-note { margin-top: 50px; }
+}
+
+.hotel-details .detail strong {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #30382d;
+}
+
+.hotel-details .detail p strong {
+  font-size: 13px;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.hotel-description { margin-bottom: 8px; }
+.hotel-details { gap: 0; margin-bottom: 22px; }
+.hotel-details .detail { padding: 7px 0; gap: 10px; align-items: flex-start; }
+.hotel-details .detail p { font-size: 13px; line-height: 1.35; }
+.hotel-details .detail strong, .hotel-extra-price { font-size: 13px; line-height: 1.3; }
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+
+.countdown-section {
+  padding: 110px 7vw;
+  background: #f4f0e7;
+  color: #30382d;
+  text-align: center;
+}
+
+.countdown-inner { max-width: 800px; margin: 0 auto; }
+.countdown-eyebrow { margin: 0 0 28px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 4px; color: #9a8060; }
+.countdown-number { display: flex; flex-direction: column; align-items: center; margin-bottom: 35px; }
+.countdown-number span { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(100px, 15vw, 170px); line-height: .75; font-weight: 400; color: #68735d; }
+.countdown-number small { margin-top: 20px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 4px; color: #30382d; }
+.countdown-time { display: flex; justify-content: center; gap: 65px; margin-bottom: 45px; }
+.countdown-time div { display: flex; flex-direction: column; align-items: center; }
+.countdown-time span { font-family: "Cormorant Garamond", Georgia, serif; font-size: 42px; line-height: 1; color: #30382d; }
+.countdown-time small { margin-top: 8px; font-family: Arial, sans-serif; font-size: 8px; letter-spacing: 2px; color: #8b8c84; }
+.countdown-date { margin: 0; font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 4px; color: #9a8060; }
+.countdown-finished { display: none; margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 42px; color: #68735d; }
+
+@media (max-width: 800px) {
+  .countdown-section { padding: 85px 22px; }
+  .countdown-eyebrow { margin-bottom: 25px; font-size: 9px; letter-spacing: 3px; }
+  .countdown-number span { font-size: 115px; }
+  .countdown-time { gap: 28px; margin-bottom: 38px; }
+  .countdown-time span { font-size: 32px; }
+  .countdown-time small { font-size: 7px; letter-spacing: 1.5px; }
+  .countdown-date { font-size: 10px; letter-spacing: 3px; }
+}
+
+/* =========================
+   SAVE THE DATE VIDEO
+   ========================= */
+
+.save-the-date-video {
+  padding: 130px 7vw 120px;
+  background: #f4f0e7;
+  color: #30382d;
+  text-align: center;
+}
+
+.video-intro { max-width: 700px; margin: 0 auto 65px; }
+.video-intro .eyebrow { margin-bottom: 18px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 4px; color: #9a8060; }
+.video-intro h2 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(52px, 7vw, 88px); line-height: .95; font-weight: 400; }
+.video-wrapper { width: 100%; max-width: 1050px; margin: 0 auto; background: #30382d; overflow: hidden; }
+.video-wrapper video { display: block; width: 100%; height: auto; max-height: 75vh; object-fit: contain; }
+.video-date { margin: 30px 0 0; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 3px; color: #9a8060; }
+
+/* =========================
+   INVITACIÓN DE ENTRADA (COMPATIBLE SAFARI Y MOBILE)
+   ========================= */
+
+#invite-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f2ede4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.invite-names, .invite-date, .invite-location {
+  display: none; 
+}
+
+.invite-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope {
+  position: relative;
+  width: min(88vw, 420px);
+  height: min(130vw, 620px);
+  margin: 0 auto;
+  background: #fcfaf6;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  perspective: 1000px;
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #f8f4ec;
+  border: 1px solid rgba(220, 210, 195, 0.5);
+}
+
+/* Solapas traseras dibujadas mediante gradientes limpios compatibles */
+.envelope-body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(135deg, #f2ece0 50%, transparent 50.5%);
+}
+
+.envelope-body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(-135deg, #f2ece0 50%, transparent 50.5%);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  z-index: 3;
+  background: #eae2d3;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform 1s cubic-bezier(.22,.61,.36,1), z-index 0s linear 0.5s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.invite-exclusive {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 68%;
+  transform: translateX(-50%);
+  width: 85%;
+  margin: 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.3;
+  color: #8c8375;
+}
+
+/* Sello de lacre blanco con relieve 3D realista */
+#open-invitation.wax-seal {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  border: none;
+  cursor: pointer;
+  
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f7f3ed 60%, #e6dfd3 100%);
+  color: #938776;
+  
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 500;
+
+  border-radius: 47% 53% 51% 49% / 52% 48% 52% 48%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9), -1px -1px 1px rgba(0, 0, 0, 0.15);
+
+  box-shadow: 
+    0 10px 25px rgba(60, 50, 40, 0.12),
+    inset 0 0 0 3px rgba(230, 222, 210, 0.6),
+    inset 3px 3px 6px rgba(255, 255, 255, 1),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+#open-invitation.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* Tarjeta interior */
+.envelope-card {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 25px;
+  width: 78%;
+  height: 72%;
+  transform: translate(-50%, 45%);
+  background: #fcfaf6;
+  box-shadow: 0 12px 30px rgba(48,56,45,.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1), opacity .4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.envelope-card p {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #30382d;
+}
+
+.envelope-card strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #9a8060;
+}
+
+.envelope-card span {
+  margin-top: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #68735d;
+}
+
+/* Estado abierto */
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .envelope-card {
+  transform: translate(-50%, -55%);
+  opacity: 1;
+}
+
+.envelope.open .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.7);
+}
+
+#invite-overlay.closing {
+  animation: inviteFadeOut 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+@keyframes inviteFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .envelope-card { width: 76%; height: 70%; }
+  .envelope-card p { font-size: 18px; letter-spacing: 1.5px; }
+  .envelope-card strong { font-size: 21px; }
+  .envelope-card span { font-size: 7px; letter-spacing: 2px; }
+}
+</style>
+</head>
+<body>
+
+<div id="invite-overlay">
+  <div class="invite-content">
+    <div class="envelope">
+      
+      <!-- Fondo y solapas traseras -->
+      <div class="envelope-body"></div>
+
+      <!-- Solapa superior desplegable -->
+      <div class="envelope-flap"></div>
+
+      <!-- Tarjeta interior que asoma al abrir -->
+      <div class="envelope-card">
+        <p>VANESSA &amp; ALEJANDRO</p>
+        <strong>26 · 06 · 2027</strong>
+        <span>MAS VIDAL · GIRONA</span>
+      </div>
+
+      <!-- Texto descriptivo -->
+      <p class="invite-exclusive">
+        Esta invitación es exclusiva para ti
+      </p>
+
+      <!-- Sello de lacre (Ubicado en la capa superior del sobre) -->
+      <button id="open-invitation" class="wax-seal">
+        V&amp;A
+      </button>
+
+    </div>
+  </div>
+</div>
+   
+<nav>
+<a href="#inicio">Inicio</a><a href="#historia">Nuestra historia</a><a href="#fin-de-semana">El fin de semana</a><a href="#boda">La boda</a><a href="#alojamiento">Alojamiento</a><a href="#rsvp">RSVP</a>
+</nav>
+
+<header id="inicio" class="hero">
+<div class="hero-photo"></div>
+<div class="hero-copy">
+<div class="kicker">NOS CASAMOS</div>
+<h1>VANESSA <span>&amp;</span> ALEJANDRO</h1>
+<div class="date">26 · 06 · 2027</div>
+<div class="place">Mas Vidal · Girona</div>
+</div>
+<div class="hero-bottom"><span>COCO'S WEDDING</span><span class="scroll">⌄</span><span>UNA NUEVA AVENTURA JUNTOS</span></div>
+</header>
+
+<section class="countdown-section">
+  <div class="countdown-inner">
+    <p class="countdown-eyebrow">NUESTRO GRAN DÍA</p>
+
+    <div class="countdown-number">
+      <span id="countdown-days">000</span>
+      <small>DÍAS</small>
+    </div>
+
+    <div class="countdown-time">
+      <div>
+        <span id="countdown-hours">00</span>
+        <small>HORAS</small>
+      </div>
+
+      <div>
+        <span id="countdown-minutes">00</span>
+        <small>MINUTOS</small>
+      </div>
+
+      <div>
+        <span id="countdown-seconds">00</span>
+        <small>SEGUNDOS</small>
+      </div>
+    </div>
+
+    <p class="countdown-date">26 · 06 · 2027</p>
+
+    <p id="countdown-finished" class="countdown-finished">
+      HOY ES EL DÍA
+    </p>
+  </div>
+</section>
+
+<section id="historia" class="section">
+<div class="intro">
+<div>
+<div class="eyebrow">Nuestra historia</div>
+<h2>Una historia que nos llevó hasta aquí.</h2>
+<p>Nos conocimos en Barcelona y, desde entonces, hemos ido construyendo una historia llena de viajes, familia, amigos y pequeños momentos que se convirtieron en grandes recuerdos.</p>
+<p>Ahora queremos celebrar el siguiente capítulo rodeados de las personas que más queremos.</p>
+</div>
+<img class="intro-photo" src="public/IMG_8267.jpeg" alt="Vanessa y Alejandro">
+</div>
+</section>
+
+<section id="fin-de-semana" class="section">
+<div class="eyebrow">Nuestros recuerdos</div>
+<h2>Antes de la boda,<br>todo lo que hemos vivido.</h2>
+<div class="gallery">
+<img src="/public/photo-2.jpeg" alt="Vanessa y Alejandro">
+<img src="/public/photo-3.jpg" alt="Vanessa y Alejandro">
+<img src="/public/photo-4.jpg" alt="Vanessa y Alejandro">
+<img src="/public/photo-1.jpeg" alt="Vanessa y Alejandro"></div>
+</section>
+
+<section id="boda" class="section details">
+<div class="eyebrow">26 · 06 · 2027</div>
+<h2>El gran día</h2>
+<div class="details-grid">
+<div class="detail"><strong>Mas Vidal</strong><span>Vilafreser · Girona</span></div>
+<div class="detail"><strong>Ceremonia</strong><span>Celebración · Recepción · Fiesta</span></div>
+<div class="detail"><strong>Todo el fin de semana</strong><span>Juntos desde el viernes</span></div>
+</div>
+</section>
+
+<section id="rsvp" class="section details">
+<div class="eyebrow">RSVP</div>
+<h2>Nos encantará<br>contar contigo.</h2>
+<p>Muy pronto podrás confirmar tu asistencia, indicar tus preferencias y dejarnos un mensaje.</p>
+</section>
+
+<section id="alojamiento" class="accommodation-section">
+
+  <div class="section-intro">
+    <span class="section-number">04</span>
+    <p class="eyebrow">PARA NUESTROS INVITADOS</p>
+    <h2>Alojamiento</h2>
+    <p class="section-description">
+      Para que podáis disfrutar del fin de semana con nosotros,
+      hemos seleccionado dos hoteles en Girona con tarifas especiales
+      para nuestros invitados.
+    </p>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- DOUBLE TREE -->
+    <article class="hotel-card">
+      <div class="hotel-image hotel-image-doubletree">
+        <div class="hotel-label">HOTEL</div>
+      </div>
+
+      <div class="hotel-content">
+        <p class="hotel-location">GIRONA</p>
+        <h3>DoubleTree by Hilton Girona</h3>
+        <div class="hotel-highlight">
+          <span>12%</span>
+          <small>DE DESCUENTO</small>
+        </div>
+
+        <p class="hotel-description">
+          Una opción cómoda y especial para alojaros durante
+          nuestro fin de semana de boda.
+        </p>
+
+        <div class="hotel-details">
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>12% de descuento sobre la mejor tarifa disponible</p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Código: <strong>COCOSWEDDING27HILTON</strong></p>
+          </div>
+          <div class="detail important">
+            <span class="detail-icon">!</span>
+            <p>
+              Para aplicar el descuento, debéis reservar
+              directamente con el hotel por teléfono o email.
+              El código no está habilitado en la web del hotel.
+            </p>
+          </div>
+        </div>
+
+        <div class="hotel-contact">
+          <a href="tel:+34972414600" class="contact-link">+34 972 41 46 00</a>
+          <a href="mailto:info.dtgirona@urh-hoteliers.com" class="contact-link">info.dtgirona@urh-hoteliers.com</a>
+        </div>
+
+        <a href="mailto:info.dtgirona@urh-hoteliers.com?subject=Reserva%20boda%20Vanessa%20%26%20Alejandro%20-%20COCOSWEDDING27HILTON" class="hotel-button">
+          CONTACTAR CON EL HOTEL <span>→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- BEST WESTERN -->
+    <article class="hotel-card">
+      <div class="hotel-image hotel-image-cmc">
+        <div class="hotel-label">HOTEL</div>
+      </div>
+
+      <div class="hotel-content">
+        <p class="hotel-location">GIRONA</p>
+        <h3>Best Western Premier CMC Girona</h3>
+        <div class="hotel-highlight">
+          <span>20%</span>
+          <small>DE DESCUENTO + DESAYUNO</small>
+        </div>
+
+        <p class="hotel-description">
+          Una tarifa especial para nuestros invitados,
+          con desayuno incluido durante vuestra estancia.
+        </p>
+
+        <div class="hotel-details">
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>20% de descuento sobre la tarifa estándar</p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Desayuno incluido</p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Habitación Superior: <strong>+10 €/noche</strong></p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Habitación Triple: <strong>+40 €/noche</strong></p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Parking privado: <strong>18 €/noche</strong></p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">✦</span>
+            <p>Código: <strong>COCOS WEDDING – Alejandro &amp; Vanessa</strong></p>
+          </div>
+        </div>
+
+        <div class="detail important">
+          <span class="detail-icon">!</span>
+          <p>
+            Para aplicar el descuento, debéis reservar
+            directamente con el hotel por teléfono o email.
+            El código no está habilitado en la web del hotel.
+          </p>
+        </div>
+
+        <div class="hotel-contact">
+          <a href="tel:+34972400500" class="contact-link">+34 972 400 500</a>
+          <a href="mailto:info@hotelcmcgirona.com" class="contact-link">info@hotelcmcgirona.com</a>
+        </div>
+
+        <a href="mailto:info@hotelcmcgirona.com?subject=Reserva%20boda%20Vanessa%20%26%20Alejandro%20-%20COCOS%20WEDDING" class="hotel-button">
+          CONTACTAR CON EL HOTEL <span>→</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="accommodation-note">
+    <span class="note-symbol">✦</span>
+    <p>
+      <strong>Os recomendamos reservar con antelación.</strong><br>
+      Las tarifas están sujetas a disponibilidad y pueden variar
+      a medida que se acerque la fecha de la boda.
+    </p>
+  </div>
+
+</section>
+
+<section class="save-the-date-video">
+  <div class="video-intro">
+    <p class="eyebrow">NUESTRO SAVE THE DATE</p>
+    <h2>Un adelanto de nuestro gran día</h2>
+  </div>
+
+  <div class="video-wrapper">
+    <video controls playsinline preload="metadata">
+      <source src="/public/abb93885-c792-4908-8222-80d468364848.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este vídeo.
+    </video>
+  </div>
+
+  <p class="video-date">26 · 06 · 2027 · MAS VIDAL · GIRONA</p>
+</section>
+
+<footer>
+<div class="logo">Coco's Wedding</div>
+<p><small>VANESSA &amp; ALEJANDRO · GIRONA · 2027</small></p>
+</footer>
+
+<script>
+  const weddingDate = new Date("2027-06-26T16:30:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+      document.getElementById("countdown-days").textContent = "000";
+      document.getElementById("countdown-hours").textContent = "00";
+      document.getElementById("countdown-minutes").textContent = "00";
+      document.getElementById("countdown-seconds").textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.getElementById("countdown-days").textContent = String(days).padStart(3, "0");
+    document.getElementById("countdown-hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("countdown-minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("countdown-seconds").textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<script>
+  const openInvitation = document.getElementById("open-invitation");
+  const envelope = document.querySelector(".envelope");
+  const inviteOverlay = document.getElementById("invite-overlay");
+
+  openInvitation.addEventListener("click", function () {
+    envelope.classList.add("open");
+    inviteOverlay.classList.add("closing");
+  });
+</script>
+
+</body>
+</html>
