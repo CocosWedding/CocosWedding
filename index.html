@@ -374,7 +374,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 .video-date { margin: 30px 0 0; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 3px; color: #9a8060; }
 
 /* =========================
-   INVITACIÓN DE ENTRADA (MÓVIL PANTALLA COMPLETA)
+   INVITACIÓN DE ENTRADA (MÓVIL PANTALLA COMPLETA - ESTILO IPHONE)
    ========================= */
 
 #invite-overlay {
@@ -400,7 +400,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   justify-content: center;
 }
 
-/* El sobre ocupa el 100% de la pantalla para simular la textura completa del papel */
+/* El sobre ocupa el 100% de la pantalla */
 .envelope {
   position: relative;
   width: 100%;
@@ -418,7 +418,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   background: #f1ede3;
 }
 
-/* Pliegues en X que van de esquina a esquina cruzando en el centro exacto */
+/* Pliegues en X cruzando en el centro exacto */
 .envelope-body::before {
   content: "";
   position: absolute;
@@ -435,7 +435,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   background: linear-gradient(to bottom left, transparent 49.6%, rgba(190, 180, 165, 0.35) 49.8%, rgba(190, 180, 165, 0.35) 50.2%, transparent 50.4%);
 }
 
-/* Solapa superior apuntando al centro */
+/* Solapa superior desplegable */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -453,12 +453,12 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
 }
 
-/* Texto ubicado JUSTO DEBAJO del sello centrado */
+/* Texto ubicado justo debajo del sello */
 .invite-exclusive {
   position: absolute;
   z-index: 5;
   left: 50%;
-  top: 59%; /* Posicionado justo tras la caída del sello */
+  top: 59.5%;
   transform: translateX(-50%);
   width: 90%;
   margin: 0;
@@ -472,59 +472,48 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   letter-spacing: 0.02em;
 }
 
-/* Sello de lacre blanco brillante con alto relieve en 3D */
+/* Sello de lacre blanco perla con relieve 3D realista */
 #open-invitation.wax-seal {
   position: absolute;
   z-index: 10;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(100px, 26vw, 115px);
-  height: clamp(100px, 26vw, 115px);
+  width: clamp(102px, 27vw, 118px);
+  height: clamp(102px, 27vw, 118px);
   border: none;
   cursor: pointer;
-  
-  /* Gradiente blanco puro brillante con reflejo radial */
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fbf9f5 65%, #ece5d8 100%);
-  color: #9c9080;
-  
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fbf9f5 65%, #eae2d4 100%);
+  color: #928574;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(28px, 7.5vw, 34px);
+  font-size: clamp(30px, 8vw, 36px);
   font-style: italic;
   font-weight: 400;
-
-  /* Borde orgánico tipo cera derretida real */
-  border-radius: 49% 51% 53% 47% / 52% 48% 52% 48%;
-
+  border-radius: 48% 52% 54% 46% / 53% 47% 53% 47%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Iniciales en fina tipografía cursiva con relieve grabado */
   text-shadow: 1px 1px 1px #fff, -1px -1px 1px rgba(0, 0, 0, 0.12);
-
-  /* Sombras biseladas pronunciadas para crear el grosor exterior del lacre */
   box-shadow: 
-    0 15px 35px rgba(45, 35, 25, 0.16),
+    0 15px 35px rgba(45, 35, 25, 0.14),
     inset 0 0 0 4px rgba(255, 255, 255, 0.9),
     inset 5px 5px 10px rgba(255, 255, 255, 1),
     inset -5px -5px 10px rgba(0, 0, 0, 0.12);
-
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 #open-invitation.wax-seal:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.04);
 }
 
-/* Tarjeta interior */
+/* Tarjeta interior deslizable */
 .envelope-card {
   position: absolute;
   z-index: 2;
   left: 50%;
   bottom: 25px;
-  width: 78%;
-  height: 72%;
+  width: min(82vw, 360px);
+  height: 68%;
   transform: translate(-50%, 45%);
   background: #fcfaf6;
   box-shadow: 0 12px 30px rgba(48,56,45,.16);
@@ -590,7 +579,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 }
 
 @media (max-width: 600px) {
-  .envelope-card { width: 76%; height: 70%; }
+  .envelope-card { width: 78%; height: 68%; }
   .envelope-card p { font-size: 18px; letter-spacing: 1.5px; }
   .envelope-card strong { font-size: 21px; }
   .envelope-card span { font-size: 7px; letter-spacing: 2px; }
@@ -603,7 +592,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   <div class="invite-content">
     <div class="envelope">
       
-      <!-- Fondo y solapas traseras -->
+      <!-- Fondo y pliegues del sobre -->
       <div class="envelope-body"></div>
 
       <!-- Solapa superior desplegable -->
@@ -616,12 +605,12 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
         <span>MAS VIDAL · GIRONA</span>
       </div>
 
-      <!-- Texto descriptivo -->
+      <!-- Texto exclusivo -->
       <p class="invite-exclusive">
         Esta invitación es exclusiva para ti
       </p>
 
-      <!-- Sello de lacre (Ubicado en la capa superior del sobre) -->
+      <!-- Sello de lacre blanco perla 3D -->
       <button id="open-invitation" class="wax-seal">
         V&amp;A
       </button>
