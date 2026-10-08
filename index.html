@@ -23,18 +23,135 @@ section{padding:70px 24px;text-align:center}
 .garland{height:46px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='46' viewBox='0 0 120 46'%3E%3Cpath d='M0 4Q60 44 120 4' fill='none' stroke='%23a58b58' stroke-width='1.4'/%3E%3Ccircle cx='20' cy='20' r='4.5' fill='%23d9c48f' stroke='%23a58b58'/%3E%3Ccircle cx='60' cy='26' r='4.5' fill='%23d9c48f' stroke='%23a58b58'/%3E%3Ccircle cx='100' cy='20' r='4.5' fill='%23d9c48f' stroke='%23a58b58'/%3E%3C/svg%3E") repeat-x center/120px 46px}
 .ill{margin:0 auto 26px;max-width:340px;border-radius:6px}
 
-/* Sobre */
-#invite{position:fixed;inset:0;z-index:99;background:#e8d9b4;overflow:hidden;transition:opacity 1s ease .9s,visibility 0s 1.9s}
-#invite.done{opacity:0;visibility:hidden;pointer-events:none}
-.env{position:absolute;inset:0;background:linear-gradient(160deg,#f1e4c3,#dcc896);perspective:1200px}
-.env:before,.env:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.7%,rgba(120,95,50,.25) 50%,transparent 50.3%)}
-.env:after{background:linear-gradient(to bottom left,transparent 49.7%,rgba(120,95,50,.25) 50%,transparent 50.3%)}
-.flap{position:absolute;top:0;left:0;width:100%;height:52%;background:#e6d3a6;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1.1s cubic-bezier(.22,.61,.36,1);z-index:3;filter:drop-shadow(0 6px 10px rgba(0,0,0,.15))}
-.seal{position:absolute;z-index:5;left:50%;top:52%;width:112px;height:112px;margin:-56px 0 0 -56px;border:0;cursor:pointer;border-radius:48% 52% 54% 46%/53% 47% 53% 47%;background:radial-gradient(circle at 35% 30%,#e9c872,#b88a2e 70%,#8a6419);color:#6b4b10;font:italic 600 34px "Cormorant Garamond",serif;box-shadow:0 14px 28px rgba(60,40,10,.35),inset 3px 3px 7px rgba(255,235,170,.7),inset -4px -4px 8px rgba(70,45,5,.4);transition:transform .5s,opacity .5s}
-.seal:hover{transform:scale(1.05)}
-.tap{position:absolute;z-index:5;left:50%;bottom:11%;transform:translateX(-50%);padding:11px 26px;border-radius:30px;background:rgba(255,248,230,.85);font-size:15px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
-.env.open .flap{transform:rotateX(180deg);z-index:1}
-.env.open .seal,.env.open .tap{opacity:0;pointer-events:none}
+/* =========================================
+   SOBRE ULTRA REALISTA (LA QUALITÉ STYLE)
+   ========================================= */
+#invite {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: #ede6d6;
+  overflow: hidden;
+  transition: opacity 1s cubic-bezier(.4,0,.2,1) 0.8s, visibility 0s 1.8s;
+}
+
+#invite.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.env {
+  position: absolute;
+  inset: 0;
+  background-color: #ede6d6;
+  background-image: 
+    radial-gradient(at 50% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 70%),
+    radial-gradient(at 50% 90%, rgba(210, 195, 170, 0.3) 0%, transparent 60%);
+  perspective: 1200px;
+}
+
+/* Pliegues en X del sobre */
+.env:before, .env:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, transparent 49.6%, rgba(160, 140, 110, 0.28) 49.9%, rgba(160, 140, 110, 0.28) 50.1%, transparent 50.4%);
+}
+
+.env:after {
+  background: linear-gradient(to bottom left, transparent 49.6%, rgba(160, 140, 110, 0.28) 49.9%, rgba(160, 140, 110, 0.28) 50.1%, transparent 50.4%);
+}
+
+/* Solapa superior desplegable */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  background: #e6decb;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.04));
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform 1.1s cubic-bezier(.22,.61,.36,1);
+  z-index: 3;
+  filter: drop-shadow(0 8px 15px rgba(60, 45, 25, 0.15));
+}
+
+/* Sello de lacre dorado brillante con volumen 3D */
+.seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 52%;
+  width: clamp(112px, 28vw, 128px);
+  height: clamp(112px, 28vw, 128px);
+  margin-top: calc(clamp(112px, 28vw, 128px) / -2);
+  margin-left: calc(clamp(112px, 28vw, 128px) / -2);
+  border: 0;
+  cursor: pointer;
+  
+  border-radius: 47% 53% 52% 48% / 51% 49% 51% 49%;
+  
+  background: 
+    radial-gradient(circle at 35% 25%, #fff2be 0%, #d8aa46 35%, #9b7222 70%, #5e430f 100%);
+  color: #3d2904;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 8.5vw, 40px);
+  font-style: italic;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-shadow: 1px 1px 1px rgba(255, 245, 200, 0.8), -1px -1px 1px rgba(30, 20, 0, 0.6);
+
+  box-shadow: 
+    0 16px 36px rgba(40, 25, 5, 0.32),
+    inset 0 0 0 4px rgba(255, 235, 170, 0.5),
+    inset 5px 5px 12px rgba(255, 250, 220, 0.8),
+    inset -6px -6px 14px rgba(40, 25, 0, 0.5);
+
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+.seal:hover {
+  transform: scale(1.05);
+}
+
+/* Botón inferior rectangular estilo La Qualité */
+.tap {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  padding: 12px 28px;
+  border-radius: 6px;
+  background: rgba(253, 250, 244, 0.92);
+  border: 1px solid rgba(180, 160, 125, 0.35);
+  box-shadow: 0 4px 15px rgba(60, 45, 25, 0.06);
+  color: #72634d;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.env.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.env.open .seal, .env.open .tap {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Hero */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;background:linear-gradient(rgba(30,32,20,.25),rgba(30,32,20,.55)),url("public/photo-3.jpg") center 40%/cover}
@@ -88,24 +205,6 @@ footer{padding:50px 20px 90px;text-align:center;color:var(--olive)}footer .scrip
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 @media(min-width:800px){section{padding:100px 40px}.hotels{grid-template-columns:1fr 1fr}.gal{grid-template-columns:repeat(4,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
-
-/* ===== Escenas ilustradas (como la referencia) ===== */
-body{background:#e4dfcc}
-section{position:relative;isolation:isolate;overflow:hidden;background:none}
-section>*{position:relative;z-index:1}
-section::before,section::after{content:"";position:absolute;width:min(34vw,190px);aspect-ratio:1;background:url(public/rama.svg) no-repeat center/contain;pointer-events:none;z-index:0}
-section::before{top:0;left:0}
-section::after{bottom:0;right:0;transform:scale(-1,-1)}
-.alt{background:#dbd5bf}
-.hotel,.frame,details{background:#f3eee0;box-shadow:0 8px 22px rgba(90,70,40,.12)}
-.frame{position:relative;box-shadow:0 0 0 7px #f3eee0,0 0 0 8px var(--gold),0 10px 26px rgba(90,70,40,.15)}
-.frame::before,.frame::after{content:"";position:absolute;width:56px;height:47px;background:url(public/mariposa.svg) no-repeat center/contain}
-.frame::before{top:16px;left:-8px;transform:rotate(-18deg)}.frame::after{top:-16px;right:24px;transform:rotate(14deg)}
-.garland{height:70px;background:url(public/guirnalda.svg) repeat-x center/160px 70px}
-.hero{min-height:100svh;padding:250px 20px 180px;text-align:center;color:var(--olive);background:url(public/cortinas.svg) top center/min(100%,820px) auto no-repeat,url(public/olivos.svg) bottom center/min(100%,1000px) auto no-repeat,#e4dfcc}
-.hero h1{color:var(--olive)}.hero .big{color:var(--gold)}
-@media(min-width:800px){.hero{padding:340px 20px 230px}}
-.env{background:linear-gradient(160deg,#f1e4c3,#dcc896)}.flap{background:#e6d3a6}
 </style>
 </head>
 <body>
@@ -147,7 +246,7 @@ section::after{bottom:0;right:0;transform:scale(-1,-1)}
 
 <section id="detalles">
   <h2>Detalles</h2>
-  <img class="ill" src="public/ilustracion-masvidal.svg" alt="Mas Vidal" onerror="this.remove()">
+  <img class="ill" src="public/ilustracion-masvidal.png.PNG" alt="Mas Vidal" onerror="this.remove()">
   <div class="frame">
     <p>Lugar</p>
     <span class="script">Mas Vidal</span>
@@ -161,7 +260,7 @@ section::after{bottom:0;right:0;transform:scale(-1,-1)}
 
 <section class="alt" id="programa">
   <h2>Programa</h2>
-  <img class="ill" src="public/ilustracion-olivo.png" alt="" onerror="this.remove()">
+  <img class="ill" src="public/IMG_8399.jpeg" alt="" onerror="this.remove()">
   <ul class="time">
     <li><b>Viernes</b><span>Bienvenida y cena informal (por confirmar)</span></li>
     <li><b>16:30</b><span>Ceremonia</span></li>
@@ -173,7 +272,7 @@ section::after{bottom:0;right:0;transform:scale(-1,-1)}
 
 <section id="vestimenta">
   <h2>Código de vestimenta</h2>
-  <img class="ill" src="public/ilustracion-vestimenta.svg" alt="" onerror="this.remove()">
+  <img class="ill" src="public/ilustracion-vestimenta.png" alt="" onerror="this.remove()">
   <div class="wrap">
     <p>Se ruega evitar el blanco y los tonos crema.</p>
     <h3>Formal</h3>
@@ -263,13 +362,16 @@ section::after{bottom:0;right:0;transform:scale(-1,-1)}
 
 <script>
 const $=id=>document.getElementById(id), aud=$('aud'), snd=$('snd');
-/* Sobre + música (el clic permite reproducir audio) */
+
+/* Sobre + reproducción de audio interactiva */
 $('open').onclick=()=>{
   $('env').classList.add('open');
   setTimeout(()=>$('invite').classList.add('done'),1300);
-  aud.volume=.5;aud.play().then(()=>snd.style.opacity=1).catch(()=>snd.style.opacity=.5);
+  aud.volume=.5;
+  aud.play().then(()=>snd.style.opacity=1).catch(()=>snd.style.opacity=.5);
 };
 snd.onclick=()=>{aud.paused?(aud.play(),snd.style.opacity=1):(aud.pause(),snd.style.opacity=.5)};
+
 /* Cuenta atrás */
 const target=new Date("2027-06-26T16:30:00");
 function tick(){
@@ -282,7 +384,8 @@ function tick(){
   $('s').textContent=p(Math.floor(t/1e3)%60,2);
 }
 tick();setInterval(tick,1000);
-/* RSVP */
+
+/* Lógica dinámica RSVP */
 document.querySelectorAll('[name=asistencia]').forEach(r=>r.onchange=()=>{$('si').style.display=r.value==="Sí"&&r.checked?"grid":$('si').style.display;if(r.value==="No"&&r.checked)$('si').style.display="none"});
 $('f').onsubmit=async e=>{
   e.preventDefault();const f=e.target,m=$('msg');
