@@ -729,7 +729,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
    INVITACIÓN DE ENTRADA
    ========================= */
 
-/* Contenedor principal ajustado a pantalla completa en móvil */
+/* Contenedor principal ajustado a pantalla completa */
 #invite-overlay {
   position: fixed;
   inset: 0;
@@ -741,7 +741,6 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   overflow: hidden;
 }
 
-/* Ocultar encabezados superiores si quieres que sea identico al iPhone */
 .invite-names, .invite-date, .invite-location {
   display: none; 
 }
@@ -754,7 +753,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   justify-content: center;
 }
 
-/* Estructura del sobre proporcional */
+/* Estructura base del sobre */
 .envelope {
   position: relative;
   width: min(88vw, 400px);
@@ -765,24 +764,20 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   overflow: visible;
 }
 
-/* Cuerpo con sombras de pliegues laterales e inferior */
+/* Capa base del sobre (atrás) */
 .envelope-body {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   background: #ede6d4;
-  /* Simulación de las solapas laterales e inferior mediante gradientes con sombra */
-  background-image: 
-    linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, transparent 40%),
-    linear-gradient(-135deg, rgba(0, 0, 0, 0.04) 0%, transparent 40%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-/* Solapas que forman la 'X' con sombra suave */
+/* Solapas izquierda y derecha */
 .envelope-body::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: #e8e0cc;
   clip-path: polygon(0 0, 50% 50%, 0 100%);
   filter: drop-shadow(2px 0 3px rgba(0,0,0,0.03));
@@ -792,6 +787,7 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: #e8e0cc;
   clip-path: polygon(100% 0, 50% 50%, 100% 100%);
   filter: drop-shadow(-2px 0 3px rgba(0,0,0,0.03));
@@ -804,54 +800,13 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   left: 0;
   width: 100%;
   height: 52%;
-  z-index: 3;
+  z-index: 3; /* Queda por encima del cuerpo pero por debajo del sello */
   background: #e2d9c3;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.06));
 }
 
-/* Sello de lacre blanco con forma irregular y volumen 3D real */
-#open-invitation.wax-seal {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 92px;
-  height: 92px;
-  border: none;
-  cursor: pointer;
-  
-  /* Lacre blanco/marfil brillante con bajo relieve */
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f7f3eb 55%, #e2dad0 100%);
-  color: #a39785;
-  
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 26px;
-  font-style: italic;
-  font-weight: 400;
-
-  /* Borde orgánico irregular simulación cera derretida */
-  border-radius: 46% 54% 52% 48% / 53% 47% 53% 47%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Sombra externa y luz interna en relieve */
-  box-shadow: 
-    0 8px 20px rgba(60, 50, 40, 0.12),
-    inset 2px 3px 5px rgba(255, 255, 255, 0.9),
-    inset -2px -3px 5px rgba(0, 0, 0, 0.08);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#open-invitation.wax-seal:hover {
-  transform: translate(-50%, -50%) scale(1.04);
-}
-
-/* Texto en cursiva dentro del sobre */
+/* Texto en el sobre */
 .invite-exclusive {
   position: absolute;
   z-index: 4;
@@ -866,6 +821,44 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   font-style: italic;
   line-height: 1.3;
   color: #7a7060;
+}
+
+/* Sello de lacre blanco (POR ENCIMA DE TODO CON Z-INDEX: 10) */
+#open-invitation.wax-seal {
+  position: absolute;
+  z-index: 10; /* Se fuerza la capa superior */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  border: none;
+  cursor: pointer;
+  
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f7f3eb 55%, #e2dad0 100%);
+  color: #a39785;
+  
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+
+  border-radius: 46% 54% 52% 48% / 53% 47% 53% 47%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 
+    0 8px 20px rgba(60, 50, 40, 0.12),
+    inset 2px 3px 5px rgba(255, 255, 255, 0.9),
+    inset -2px -3px 5px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#open-invitation.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.04);
 }
 
 /* =========================
