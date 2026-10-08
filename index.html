@@ -891,19 +891,31 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 }
 
 .invite-exclusive {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 69%;
+  transform: translateX(-50%);
+  width: 80%;
   margin: 0;
+  text-align: center;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 18px;
   font-style: italic;
   letter-spacing: 1px;
+  line-height: 1.2;
   color: #68735d;
 }
 
 @media (max-width: 600px) {
+
   .invite-exclusive {
-    font-size: 17px;
+    top: 69%;
+    width: 82%;
+    font-size: 18px;
     letter-spacing: .5px;
   }
+
 }
 
 #invite-overlay {
@@ -923,22 +935,18 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
     margin-bottom: 34px;
   }
 
-  .envelope {
-    width: 82vw;
-    height: 52vw;
-    margin-bottom: 30px;
-  }
-
-#open-invitation {
-  width: 70px;
-  height: 70px;
-  font-size: 21px;
+.envelope {
+  width: 86vw;
+  height: 96vw;
+  margin: 0 auto;
 }
 
   #open-invitation {
-    font-size: 9px;
-    letter-spacing: 3px;
+    width: 68px;
+    height: 68px;
+    font-size: 20px;
   }
+
 }
 
 /* =========================
@@ -1089,13 +1097,11 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
       V&amp;A
     </button>
 
+    <p class="invite-exclusive">
+      Esta invitación es exclusiva para ti
+    </p>
+
   </div>
-
-</div>
-
-<p class="invite-exclusive">
-  Esta invitación es exclusiva para ti
-</p>
 
 </div>
 
