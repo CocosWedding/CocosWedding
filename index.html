@@ -773,15 +773,15 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 /* SOBRE */
 
 .envelope {
-  position: relative;
-  width: min(82vw, 430px);
-  height: min(54vw, 270px);
-  margin: 0 auto 38px;
-  background: #e9e0d0;
-  box-shadow:
-    0 25px 60px rgba(48, 56, 45, .15),
-    0 3px 8px rgba(48, 56, 45, .08);
-  overflow: visible;
+    position: relative;
+    width: min(86vw, 720px);
+    height: min(55vw, 460px);
+    margin: 0 auto 38px;
+    background: #e9e0d0;
+    box-shadow:
+        0 25px 60px rgba(48,56,45,.15),
+        0 3px 8px rgba(48,56,45,.08);
+    overflow: visible;
 }
 
 /* cuerpo inferior del sobre */
@@ -812,25 +812,47 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
 /* sello */
 
 .wax-seal {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%, -50%);
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #a88343;
-  color: #f6eddb;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  letter-spacing: 1px;
-  box-shadow:
-    0 4px 10px rgba(48,56,45,.2),
-    inset 0 1px 2px rgba(255,255,255,.35);
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+
+    width: 82px;
+    height: 82px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ae8a4d;
+    color: #f8f4eb;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(48,56,45,.18),
+        inset 0 1px 1px rgba(255,255,255,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.wax-seal:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.wax-seal:active {
+    transform: translate(-50%, -50%) scale(.96);
 }
 
 /* botón */
