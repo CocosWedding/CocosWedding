@@ -88,6 +88,24 @@ footer{padding:50px 20px 90px;text-align:center;color:var(--olive)}footer .scrip
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 @media(min-width:800px){section{padding:100px 40px}.hotels{grid-template-columns:1fr 1fr}.gal{grid-template-columns:repeat(4,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* ===== Escenas ilustradas (como la referencia) ===== */
+body{background:#e4dfcc}
+section{position:relative;isolation:isolate;overflow:hidden;background:none}
+section>*{position:relative;z-index:1}
+section::before,section::after{content:"";position:absolute;width:min(34vw,190px);aspect-ratio:1;background:url(public/rama.svg) no-repeat center/contain;pointer-events:none;z-index:0}
+section::before{top:0;left:0}
+section::after{bottom:0;right:0;transform:scale(-1,-1)}
+.alt{background:#dbd5bf}
+.hotel,.frame,details{background:#f3eee0;box-shadow:0 8px 22px rgba(90,70,40,.12)}
+.frame{position:relative;box-shadow:0 0 0 7px #f3eee0,0 0 0 8px var(--gold),0 10px 26px rgba(90,70,40,.15)}
+.frame::before,.frame::after{content:"";position:absolute;width:56px;height:47px;background:url(public/mariposa.svg) no-repeat center/contain}
+.frame::before{top:16px;left:-8px;transform:rotate(-18deg)}.frame::after{top:-16px;right:24px;transform:rotate(14deg)}
+.garland{height:70px;background:url(public/guirnalda.svg) repeat-x center/160px 70px}
+.hero{min-height:100svh;padding:250px 20px 180px;text-align:center;color:var(--olive);background:url(public/cortinas.svg) top center/min(100%,820px) auto no-repeat,url(public/olivos.svg) bottom center/min(100%,1000px) auto no-repeat,#e4dfcc}
+.hero h1{color:var(--olive)}.hero .big{color:var(--gold)}
+@media(min-width:800px){.hero{padding:340px 20px 230px}}
+.env{background:linear-gradient(160deg,#f1e4c3,#dcc896)}.flap{background:#e6d3a6}
 </style>
 </head>
 <body>
@@ -129,7 +147,7 @@ footer{padding:50px 20px 90px;text-align:center;color:var(--olive)}footer .scrip
 
 <section id="detalles">
   <h2>Detalles</h2>
-  <img class="ill" src="public/ilustracion-masvidal.png.PNG" alt="Mas Vidal" onerror="this.remove()">
+  <img class="ill" src="public/ilustracion-masvidal.svg" alt="Mas Vidal" onerror="this.remove()">
   <div class="frame">
     <p>Lugar</p>
     <span class="script">Mas Vidal</span>
@@ -143,7 +161,7 @@ footer{padding:50px 20px 90px;text-align:center;color:var(--olive)}footer .scrip
 
 <section class="alt" id="programa">
   <h2>Programa</h2>
-  <img class="ill" src="public/IMG_8399.jpeg" alt="" onerror="this.remove()">
+  <img class="ill" src="public/ilustracion-olivo.png" alt="" onerror="this.remove()">
   <ul class="time">
     <li><b>Viernes</b><span>Bienvenida y cena informal (por confirmar)</span></li>
     <li><b>16:30</b><span>Ceremonia</span></li>
@@ -155,7 +173,7 @@ footer{padding:50px 20px 90px;text-align:center;color:var(--olive)}footer .scrip
 
 <section id="vestimenta">
   <h2>Código de vestimenta</h2>
-  <img class="ill" src="public/ilustracion-vestimenta.png" alt="" onerror="this.remove()">
+  <img class="ill" src="public/ilustracion-vestimenta.svg" alt="" onerror="this.remove()">
   <div class="wrap">
     <p>Se ruega evitar el blanco y los tonos crema.</p>
     <h3>Formal</h3>
