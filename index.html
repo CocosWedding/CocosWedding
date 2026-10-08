@@ -724,10 +724,220 @@ footer{text-align:center;padding:70px 20px;background:var(--cream)}footer .logo{
   margin-top: 18px;
 }
 
+/* =========================
+   INVITACIÓN DE ENTRADA
+   ========================= */
+
+#invite-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f4f0e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.invite-content {
+  width: min(90vw, 560px);
+  text-align: center;
+  color: #30382d;
+}
+
+.invite-names {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 7vw, 52px);
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+.invite-date {
+  margin: 0 0 10px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #9a8060;
+}
+
+.invite-location {
+  margin: 0 0 42px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #68735d;
+}
+
+/* SOBRE */
+
+.envelope {
+  position: relative;
+  width: min(82vw, 430px);
+  height: min(54vw, 270px);
+  margin: 0 auto 38px;
+  background: #e9e0d0;
+  box-shadow:
+    0 25px 60px rgba(48, 56, 45, .15),
+    0 3px 8px rgba(48, 56, 45, .08);
+  overflow: visible;
+}
+
+/* cuerpo inferior del sobre */
+
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, transparent 49.5%, #d8cdbb 50%, transparent 50.5%),
+    linear-gradient(225deg, transparent 49.5%, #d8cdbb 50%, transparent 50.5%),
+    #eee6d7;
+}
+
+/* solapa */
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 58%;
+  z-index: 3;
+  background: #e6dccb;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  filter: drop-shadow(0 3px 3px rgba(48,56,45,.08));
+}
+
+/* sello */
+
+.wax-seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a88343;
+  color: #f6eddb;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  box-shadow:
+    0 4px 10px rgba(48,56,45,.2),
+    inset 0 1px 2px rgba(255,255,255,.35);
+}
+
+/* botón */
+
+#open-invitation {
+  border: 0;
+  background: transparent;
+  color: #30382d;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  padding: 12px 18px;
+}
+
+#open-invitation span {
+  display: block;
+  margin-top: 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: #9a8060;
+}
+
+#open-invitation:hover {
+  opacity: .65;
+}
+
+@media (max-width: 600px) {
+
+  #invite-overlay {
+    padding: 30px 20px;
+  }
+
+  .invite-names {
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+
+  .invite-date {
+    font-size: 9px;
+  }
+
+  .invite-location {
+    margin-bottom: 34px;
+  }
+
+  .envelope {
+    width: 82vw;
+    height: 52vw;
+    margin-bottom: 30px;
+  }
+
+  .wax-seal {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  #open-invitation {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+}
+
 }
 </style>
 </head>
 <body>
+   
+   <div id="invite-overlay">
+
+  <div class="invite-content">
+
+    <p class="invite-names">
+      VANESSA &amp; ALEJANDRO
+    </p>
+
+    <p class="invite-date">
+      26 · 06 · 2027
+    </p>
+
+    <p class="invite-location">
+      MAS VIDAL · GIRONA
+    </p>
+
+    <div class="envelope">
+
+      <div class="envelope-flap"></div>
+
+      <div class="envelope-body">
+
+        <div class="wax-seal">
+          V&amp;A
+        </div>
+
+      </div>
+
+    </div>
+
+    <button id="open-invitation">
+      ABRIR INVITACIÓN
+      <span>→</span>
+    </button>
+
+  </div>
+
+</div>
+   
 <nav>
 <a href="#inicio">Inicio</a><a href="#historia">Nuestra historia</a><a href="#fin-de-semana">El fin de semana</a><a href="#boda">La boda</a><a href="#alojamiento">Alojamiento</a><a href="#rsvp">RSVP</a>
 </nav>
